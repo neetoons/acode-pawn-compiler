@@ -1,19 +1,44 @@
 import plugin from '../plugin.json';
 
 class AcodePlugin {
+  #DialogBox = acode.require('dialogBox');
+  #SideButton = acode.require('sideButton');
+  #sideButton = SideButton({
+    text: 'Compilar',
+    icon: 'my-icon',
+    onclick() {
+      await this.compile()
+      console.log('clicked');
+    },
+    backgroundColor: '#fff',
+    textColor: '#000',
+  });
 
   async init() {
-    const DialogBox = acode.require('dialogBox');
-    const myDialogBox = DialogBox(
-      'Pawn',
-      '<h1>Welcome pawn compiler</h1>',
-      'hideBUttonText',
-      'cancelButtonText'
-    );
+    this.sideButton.show();
   }
 
   async destroy() {
 
+  }
+
+  async compile() {
+    const toast = acode.require('toast');
+    toast('Compilando', 3000);
+    const fileList = acode.require('fileList');
+    const list = await fileList();
+
+  //sideButton.hide();
+  const myDialogBox = DialogBox(
+    'Pawn',
+    list.map(item => item.name).join(" "),
+    'ok',
+    'cancel'
+  );
+
+//    list.forEach((item) => {
+//      console.log(item.name, item.path);
+//    }); 
   }
 }
 
