@@ -6,7 +6,7 @@ class AcodePlugin {
   #sideButton = SideButton({
     text: 'Compilar',
     icon: 'my-icon',
-    onclick() {
+    async onclick() {
       await this.compile()
       console.log('clicked');
     },
