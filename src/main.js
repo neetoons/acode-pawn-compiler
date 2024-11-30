@@ -3,7 +3,13 @@ import plugin from '../plugin.json';
 class AcodePlugin {
 
   async init() {
-
+    const DialogBox = acode.require('dialogBox');
+    const myDialogBox = DialogBox(
+      'Pawn',
+      '<h1>Welcome pawn compiler</h1>',
+      'hideBUttonText',
+      'cancelButtonText'
+    );
   }
 
   async destroy() {

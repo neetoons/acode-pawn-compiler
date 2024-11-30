@@ -1,6 +1,6 @@
 {
   "id": "acode.plugin",
-  "name": "Plugin",
+  "name": "Pawn-compiler",
   "main": "dist/main.js",
   "version": "1.0.0",
   "readme": "readme.md",
@@ -9,8 +9,8 @@
   "minVersionCode" : 290,
   "price": 0,
   "author": {
-    "name": "",
-    "email": "",
-    "github": ""
+    "name": "neetoons",
+    "email": "neet.toons@gmail.com",
+    "github": "https://github.com/neetoons"
   }
 }
